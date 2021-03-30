@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+
+    <title>Cafeteria Java Script</title>
+  </head>
+  <body>
+    <header>
+      <!--NavBar-->
+      <nav style="height: 4.5rem" class="navbar-light bg-light">
+        <div
+          class="container-fluid"
+          style="background-color: brown; width: 100%; height: 100%"
+        >
+          <a class="navbar-brand" href="#" style="color: cornsilk">
+            <img
+              src="Logo.png"
+              alt=""
+              width="110"
+              height="60"
+              class="d-inline-block; mt-1"
+            />
+            Cafeteria Java Script
+          </a>
+        </div>
+        <!--boton Login-->
+        <!--boton Login Adm-->
+      </nav>
+    </header>
+    <div class="card m-auto p-5" style="max-width: 350px">
+      <form id="formulario">
+        <label for="inputEmail">Nombre Cliente</label>
+        <input type="email" id="inputEmail" required />
+        <br />
+        <label for="inputPass">Ingresar Cantidad</label>
+        <input type="password" id="inputPass" required />
+        <br />
+        <!--<label for="inputNombre">Ingresar Precio</label>
+        <input type="text" id="inputNombre" required />
+        <br />-->
+        <label for="inputRol">Ingresar Producto</label>
+        <br />
+        <select id="inputRol" required>
+          <option>Cafe</option>
+          <option>Cafetera</option>
+          <option>Molinillo</option>
+        </select>
+        <!--<button
+          type="button"
+          class="btn btn-warning btn-sm"
+          data-bs-toggle="modal"
+          data-bs-target="#modalRoles"
+        >
+          Administrar roles
+        </button>-->
+        <br />
+        <div class="mt-3">
+          <button type="submit">Enviar</button>
+        </div>
+      </form>
+    </div>
+    <div class="mt-5 mb-3">
+      <form id="formBusqueda">
+        <label for="busqueda">Busqueda por nombre de cliente o producto</label>
+        <input id="busqueda" type="text" />
+        <button type="submit">Buscar</button>
+        <button type="button" onclick="limpiarFiltro()">Limpiar</button>
+      </form>
+    </div>
+
+    <!--Tabla usuarios-->
+    <div>
+      <table class="table table-dark table-striped mt-5">
+        <thead>
+          <tr>
+            <th scope="col">Nombre Cliente</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Producto</th>
+            <th scope="col">Opciones</th>
+          </tr>
+        </thead>
+        <tbody id="tabla">
+          <!--<tr>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+            <td>
+              <button
+                type="button"
+                class="btn btn-primary btn-sm"
+                data-bs-toggle="modal"
+                data-bs-target="#modalDetalle"
+              >
+                Ver Detalle
+              </button>
+              <button
+                type="button"
+                class="btn btn-success btn-sm"
+                data-bs-toggle="modal"
+                data-bs-target="#modalEditar"
+              >
+                Editar
+              </button>
+              <button onclick="eliminarUsuario()" class="btn btn-danger btn-sm">
+                Eliminar
+              </button>
+            </td>
+          </tr>-->
+        </tbody>
+      </table>
+      <!--Alerta-->
+      <div id="alertaBusqueda" class="alert alert-info d-none">
+        No hay resultados para la busqueda
+      </div>
+    </div>
+    <!-- Modal detalle usuario-->
+    <div
+      class="modal fade"
+      id="modalDetalle"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Datos del Pedido</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div id="detalleUsuario" class="modal-body">
+            <!--
+            <p>Email</p>
+            <p>Nombre</p>
+            <p>Rol</p>
+            <p>Fecha de Registro</p>-->
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal Editar Usuario-->
+    <div
+      class="modal fade"
+      id="modalEditar"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Editar Pedido</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <form id="formularioEditar">
+            <div class="modal-body">
+              <label for="editarNombre">Ingresar Cantidad</label>
+              <input type="text" id="editarNombre" required />
+              <br />
+              <label for="editarRol">Ingresar Producto</label>
+              <select id="editarRol" required>
+                <option>Cafe</option>
+                <option>Cafetera</option>
+                <option>Molinillo</option>
+              </select>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-primary" type="submit">Enviar</button>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Cerrar
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!--Modal Administrar Roles-->
+    <div
+      class="modal fade"
+      id="modalRoles"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Administrar roles
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <form id="formularioRoles">
+            <div class="modal-body">
+              <label for="editarNombre">Ingresar nuevo rol:</label>
+              <input type="text" id="nuevoRol" required />
+              <br />
+              <ul id="listaRoles" class="mt-4">
+                <!--<li>
+                  <span style="min-width: 150px; display: inline-block"
+                    >Dev</span
+                  ><button
+                    onclick="eliminarRol(`${usuario.rol}`)"
+                    class="btn btn-sm btn-danger"
+                  >
+                    Eliminar
+                  </button>
+                </li>
+                <li>
+                  <span style="min-width: 150px; display: inline-block">
+                    Master</span
+                  ><button
+                    onclick="eliminarRol(`${usuario.rol}`)"
+                    class="btn btn-sm btn-danger"
+                  >
+                    Eliminar
+                  </button>
+                </li>-->
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-primary" type="submit">Enviar</button>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Cerrar
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
