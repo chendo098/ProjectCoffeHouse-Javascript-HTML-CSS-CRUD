@@ -1,0 +1,79 @@
+ 
+.bg-nav{
+    padding: 10px 0;
+    background: #f0ebe7;
+  }
+.navg{
+    padding: 5px 9px;
+    border-radius: .25rem;
+}
+.navg:hover{
+    background-color: whitesmoke;
+    width: 33%;
+    
+}
+
+
+.text-header{
+    font-size: 2.5rem;
+}
+.text-btn{
+    font-size: 1.3rem;
+    font-weight: 650;
+
+}
+.text-coffee { 
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+}
+.bg-color{
+    background: #e6ccb2;
+
+}
+
+.bg-footer{
+    background : #b08968
+}
+.btn:focus{
+    box-shadow: none;
+}
+.style-card{
+    border: solid;
+    border-color: black;
+    border-width: 2px;
+    overflow: hidden;
+    transition: all 0.25s;
+    
+}
+
+.card-recorte{
+    width: 100%;
+    height: 176px;
+    object-fit: cover;
+}
+
+.style-card:hover{
+    transform: translateY(-15px);
+
+} 
+
+.card-tech{
+    height: 300px;
+    width: 300px;
+    border-radius: 30%;
+    
+}
+.card-foto{
+    height: 80px;
+    width: 80px;
+    border: solid 6px;
+     ;
+}
+.icons{
+    font-size: 80px;
+    /* color: black; */
+}
+.icons-footer{
+    font-size: 40px;
+    color: white;
+}
