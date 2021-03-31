@@ -18,7 +18,7 @@ function generarID() {
     // after the decimal.
     return '_' + Math.random().toString(36).substr(2, 9);
 }
-
+/* Formulario Submit */
 function submitFormulario(e) {
     e.preventDefault();
     const usuario = {
@@ -36,7 +36,10 @@ function submitFormulario(e) {
     console.log('Se registró exitosamente un usuario. 👨‍💻');
     formularioForm.reset(); // reset limpia los campos del formulario.
 }
+/* Formulario Submit */
 
+
+/* Mostrar Usuarios */
 function mostrarUsuarios() {
     // const usuariosMap = usuarios.map(function (usuario) {
     //     return `
@@ -70,6 +73,7 @@ function mostrarUsuarios() {
     usuariosTable.innerHTML = filas.join('');
 }
 
+/* Funcion Eliminar */
 function eliminarUsuario(id) {
     const confirmar = confirm('Confirme para eliminar el usuario.');
     if (!confirmar) {
@@ -91,7 +95,9 @@ function eliminarUsuario(id) {
     console.log('Se eliminó exitosamente un usuario. 👨‍💻');
     mostrarUsuarios();
 }
+/* Funcion Eliminar */
 
+/* Mostrar detalle */
 function mostrarDetalle(id) {
     const usuarioEncontrado = usuarios.find((usuario) => usuario.id === id);
     const detalleDiv = document.getElementById('detalleUsuario');
@@ -104,7 +110,10 @@ function mostrarDetalle(id) {
     `;
     detalleDiv.innerHTML = detallesUsuario;
 }
+/* Mostrar detalle */
 
+
+/* Editar Producto */
 // Esta función carga los datos del usuario seleccionado,
 // en los campos del formulario del documento HTML.
 function cargarModalEditar(id) {
@@ -159,6 +168,11 @@ function editarUsuario(e) {
     modalBootstrap.hide();
 }
 
+/* Editar Producto */
+
+
+/* Busqueda */
+
 const submitBusqueda = (e) => {
     e.preventDefault();
     const usuariosLocal = JSON.parse(localStorage.getItem('usuarios')) || [];
@@ -187,6 +201,11 @@ const limpiarFiltro = () => {
     const alerta = document.getElementById('alertaBusqueda');
     alerta.classList.add('d-none');
 }
+
+/* Busqueda */
+
+
+/* Funciones declaradas */
 
 mostrarUsuarios();
 formularioForm.onsubmit = submitFormulario;
