@@ -1,18 +1,18 @@
- 
+  
 .bg-nav{
     padding: 10px 0;
     background: #f0ebe7;
   }
+
 .navg{
     padding: 5px 9px;
     border-radius: .25rem;
 }
+
 .navg:hover{
     background-color: whitesmoke;
     width: 33%;
-    
 }
-
 
 .text-header{
     font-size: 2.5rem;
@@ -26,13 +26,14 @@
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
 }
+
 .bg-color{
-    background: #e6ccb2;
+    background: #ede0d4 ;
 
 }
 
 .bg-footer{
-    background : #b08968
+    background : #e6ccb2;
 }
 .btn:focus{
     box-shadow: none;
@@ -75,5 +76,39 @@
 }
 .icons-footer{
     font-size: 40px;
-    color: white;
+    color: black;
+}
+
+.copy-footer {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color:black;
+    padding-bottom: .6rem;
+}
+
+/* Registrarse */
+.bg-login{
+    background-color: #ede0d4;
+}
+.titulo-reg{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+
+}
+.subtitulo-reg{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+
+    margin-right: 5px;
+}
+
+
+.texto-reg{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+
 }
