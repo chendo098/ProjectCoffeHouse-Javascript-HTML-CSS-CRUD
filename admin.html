@@ -39,102 +39,108 @@
       </nav>
     </header>
 <!-- Navbar -->
-
-<!-- Ingreso Producto -->
-    <div class="card m-auto p-5" style="max-width: 350px">
+    <!-- Formulario de ingreso -->
+    <div class="card m-auto p-3 mt-4 bg-light" style="max-width: 600px">
       <form id="formulario">
-        <label for="inputEmail">Nombre Cliente</label>
-        <input type="email" id="inputEmail" required />
-        <br />
-        <label for="inputPass">Ingresar Cantidad</label>
-        <input type="password" id="inputPass" required />
-        <br />
-        <!--<label for="inputNombre">Ingresar Precio</label>
-        <input type="text" id="inputNombre" required />
-        <br />-->
-        <label for="inputRol">Ingresar Producto</label>
-        <br />
-        <select id="inputRol" required>
-          <option>Cafe</option>
-          <option>Cafetera</option>
-          <option>Molinillo</option>
-        </select>
-        <!--<button
-          type="button"
-          class="btn btn-warning btn-sm"
-          data-bs-toggle="modal"
-          data-bs-target="#modalRoles"
-        >
-          Administrar roles
-        </button>-->
-        <br />
-        <div class="mt-3">
-          <button type="submit">Enviar</button>
+        <div class="form-group">
+          <label for="inputTipo">Ingresar Tipo de Producto</label>
+          <br />
+          <select id="inputTipo" required>
+            <option>Cafe</option>
+            <option>Máquina</option>
+            <option>Molinillo</option>
+          </select>
+          
+          </div>
+          <br>
+          <div>
+          <label for="inputMarca">Marca</label>
+          <input
+            type="text"
+            class="form-control"
+            id="inputMarca"
+            placeholder="Ingrese Marca"
+            required
+            maxlength="60"
+          />
         </div>
+        <div>
+          <label for="inputDescripcion">Descripción</label>
+          <input
+            type="text"
+            class="form-control"
+            id="inputDescripcion"
+            placeholder="Ingrese Descripción"
+            required
+            maxlength="60"
+          />
+        </div>
+        <div>
+          <label for="inputPrecio">Precio</label>
+          <input
+            type="number"
+            class="form-control"
+            id="inputPrecio"
+            placeholder="Ingrese Precio"
+            required
+            maxlength="60"
+          />
+        </div>
+        <div>
+          <label for="inputStock">Stock</label>
+          <input
+            type="number"
+            class="form-control"
+            id="inputStock"
+            placeholder="Ingrese Stock Disponible"
+            required
+            maxlength="60"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">ENVIAR</button>
       </form>
     </div>
-<!-- Ingreso Producto -->
 
-<!-- Busqueda -->
-    <div class="mt-5 mb-3">
-      <form id="formBusqueda">
-        <label for="busqueda">Busqueda por nombre de cliente o producto</label>
-        <input id="busqueda" type="text" />
-        <button type="submit">Buscar</button>
-        <button type="button" onclick="limpiarFiltro()">Limpiar</button>
+    <!-- Búsqueda Productos -->
+    <div class="mt-5 mb-3 misnotas-div">
+      <form class="mx-3" id="formBusqueda">
+          <label class="fw-bold busqueda-label" for="busqueda">Búsqueda de Producto</label>
+          <input class="mx-3 busqueda-input" id="busqueda" type="text">
+          <button class="btn btn-dark boton-busqueda" type="submit">Buscar</button>
+          <button class="btn btn-secondary mx-2 boton-limpiar" type="button"
+              onclick="limpiarFiltro()">Limpiar</button>
       </form>
-    </div>
-<!-- Busqueda -->
+  </div>
 
-<!--Tabla Productos-->
-    <div>
-      <table class="table table-dark table-striped mt-5">
+    <!-- Tabla que muestra los productos -->
+
+    <div class="container">
+      <table class="table table-bordered mt-5">
         <thead>
           <tr>
-            <th scope="col">Nombre Cliente</th>
-            <th scope="col">Cantidad</th>
-            <th scope="col">Producto</th>
-            <th scope="col">Opciones</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Marca</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Stock</th>
           </tr>
         </thead>
-        <tbody id="tabla">
-          <!--<tr>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>
-              <button
-                type="button"
-                class="btn btn-primary btn-sm"
-                data-bs-toggle="modal"
-                data-bs-target="#modalDetalle"
-              >
-                Ver Detalle
-              </button>
-              <button
-                type="button"
-                class="btn btn-success btn-sm"
-                data-bs-toggle="modal"
-                data-bs-target="#modalEditar"
-              >
-                Editar
-              </button>
-              <button onclick="eliminarUsuario()" class="btn btn-danger btn-sm">
-                Eliminar
-              </button>
-            </td>
-          </tr>-->
-        </tbody>
+        <tbody id="tabla"></tbody>
+        <!-- <tr>
+          <td>Tipo</td>
+          <td>Descripcion</td>
+          <td>
+            <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
+              data-bs-target="#modalDetalle">Ver detalle</button>
+            <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal"
+              data-bs-target="#modalEditar">Editar</button>
+            <button onclick="eliminarUsuario()" class="btn btn-danger btn-sm">Eliminar</button>
+          </td>
+        </tr> -->
       </table>
-      <!--Alerta-->
-      <div id="alertaBusqueda" class="alert alert-info d-none">
-        No hay resultados para la busqueda
-      </div>
     </div>
-<!--Tabla Productos-->
 
-
-<!-- Modal detalle usuario-->
+    <!-- Modal Detalle Nota -->
     <div
       class="modal fade"
       id="modalDetalle"
@@ -145,7 +151,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Datos del Pedido</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Datos de usuario</h5>
             <button
               type="button"
               class="btn-close"
@@ -153,12 +159,9 @@
               aria-label="Close"
             ></button>
           </div>
-          <div id="detalleUsuario" class="modal-body">
-            <!--
-            <p>Email</p>
-            <p>Nombre</p>
-            <p>Rol</p>
-            <p>Fecha de Registro</p>-->
+          <div id="detalleProducto" class="modal-body">
+            <!-- <p>Titulo</p>
+            <p>Nota</p> -->
           </div>
           <div class="modal-footer">
             <button
@@ -172,129 +175,50 @@
         </div>
       </div>
     </div>
-
-<!-- Modal detalle usuario-->
-
-
-<!-- Modal Editar Usuario-->
-    <div
-      class="modal fade"
-      id="modalEditar"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Editar Pedido</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <form id="formularioEditar">
-            <div class="modal-body">
-              <label for="editarNombre">Ingresar Cantidad</label>
-              <input type="text" id="editarNombre" required />
-              <br />
-              <label for="editarRol">Ingresar Producto</label>
-              <select id="editarRol" required>
-                <option>Cafe</option>
-                <option>Cafetera</option>
-                <option>Molinillo</option>
-              </select>
-            </div>
-            <div class="modal-footer">
-              <button class="btn btn-primary" type="submit">Enviar</button>
-              <button
-                type="button"
-                class="btn btn-secondary"
-                data-bs-dismiss="modal"
-              >
-                Cerrar
-              </button>
-            </div>
-          </form>
+      <!-- Modal Editar Nota -->
+  <div class="modal fade" id="modalEditar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Editar Producto</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+        <form id="formularioEditar">
+          <div class="modal-body">
+            <label for="editarMarca">Ingresar Marca</label>
+            <input type="text" id="editarMarca" required>
+            <br>
+            <label for="editarDescripcion">Ingresar Descripcion</label>
+            <input type="text" id="editarDescripcion" required>
+            <br>
+            <label for="editarPrecio">Ingresar Precio</label>
+            <input type="number" id="editarPrecio" required>
+            <br>
+            <label for="editarStock">Ingresar Stock</label>
+            <input type="number" id="editarStock" required>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-primary" type="submit" >Enviar</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </form>
       </div>
     </div>
 
-<!-- Modal Editar Usuario-->
-
-    <!--Modal Administrar Roles-->
-<!--     <div
-      class="modal fade"
-      id="modalRoles"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">
-              Administrar roles
-            </h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <form id="formularioRoles">
-            <div class="modal-body">
-              <label for="editarNombre">Ingresar nuevo rol:</label>
-              <input type="text" id="nuevoRol" required />
-              <br />
-              <ul id="listaRoles" class="mt-4">
-                <!--<li>
-                  <span style="min-width: 150px; display: inline-block"
-                    >Dev</span
-                  ><button
-                    onclick="eliminarRol(`${usuario.rol}`)"
-                    class="btn btn-sm btn-danger"
-                  >
-                    Eliminar
-                  </button>
-                </li>
-                <li>
-                  <span style="min-width: 150px; display: inline-block">
-                    Master</span
-                  ><button
-                    onclick="eliminarRol(`${usuario.rol}`)"
-                    class="btn btn-sm btn-danger"
-                  >
-                    Eliminar
-                  </button>
-                </li>-->
- <!--              </ul>
-            </div>
-            <div class="modal-footer">
-              <button class="btn btn-primary" type="submit">Enviar</button>
-              <button
-                type="button"
-                class="btn btn-secondary"
-                data-bs-dismiss="modal"
-              >
-                Cerrar
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div> --> -->
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
       crossorigin="anonymous"
     ></script>
-    <script src="script.js"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+    -->
+    <script src="./admin.js"></script>
   </body>
 </html>
