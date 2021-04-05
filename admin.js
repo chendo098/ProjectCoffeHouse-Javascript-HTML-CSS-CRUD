@@ -35,9 +35,10 @@ formularioDom.onsubmit = function (e) {
   mostrarProductos();
   mostrarProductosIndex();
   formularioDom.reset();
-/*   const modalDivNew = document.getElementById("exampleModal");
+  const modalDivNew = document.getElementById("exampleModal");
   const modalBootstrapNew = bootstrap.Modal.getInstance(modalDivNew);
-  modalBootstrapNew.hide(); */
+  console.log("formularioDom.onsubmit -> modalBootstrapNew", modalBootstrapNew)
+  modalBootstrapNew.hide();
 };
 
 function mostrarProductos() {
@@ -168,28 +169,4 @@ const limpiarFiltro = () => {
   alerta.classList.add("d-none");
 };
 
-/* Mostrar tarjetas de Productos */
 
-const tablaDomIndex = document.getElementById("tablaIndex"); 
-
-function mostrarProductosIndex() {
-  let filasIndex = [];
-  for (let i = 0; i < productos.length; i++) {
-    const producto = productos[i];
-    const tarjetas = `
-                <div class="card" style="width: 18rem;">
-                    <img src="./images/Logo.png" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">${producto.descripcion}</h5>
-                    <h7 class="card-title">${producto.tipo}</h7>
-                    <p class="card-text">${producto.marca}</p>
-                    <a href="#" class="btn btn-primary">${producto.precio}</a>
-                  </div>
-                </div>
-      `;
-    filasIndex.push(tarjetas);
-  }
-  tablaDomIndex.innerHTML = filasIndex.join("");
-};
-
-mostrarProductosIndex();
