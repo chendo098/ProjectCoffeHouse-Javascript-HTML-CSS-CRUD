@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style.css" />
 
     <!-- Bootstrap CSS -->
     <link
@@ -20,132 +20,209 @@
       integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
       crossorigin="anonymous"
     />
-    
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Heebo&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo&display=swap"
+      rel="stylesheet"
+    />
     <title>The coffee house</title>
   </head>
-  <body class= "text-coffee">
-    
-      <!-- Barra de navegacion -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-nav">
-        <div class="container">
-            <a class="navbar-brand" href="./index.html"><img class="logo-nav" width="90" height="60" src="./images/Logo.png" alt=""></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+  <body class="text-coffee">
+    <!-- Barra de navegacion -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-nav">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html"
+          ><img
+            class="logo-nav"
+            width="140"
+            height="70"
+            src="./images/Logo.png"
+            alt=""
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNavAltMarkup"
+        >
+          <div class="navbar-nav text-btn">
+            <a
+              class="nav-link active navg"
+              aria-current="page"
+              href="./index.html"
+              >Inicio</a
+            >
+            <a class="nav-link navg" href="#coffee">Cafe</a>
+            <a class="nav-link navg" href="#cafeteras">Cafeteras</a>
+            <a class="nav-link navg" href="#molinillos">Molinillos</a>
+            <button
+              type="button"
+              class="btn btn-primary btn-sm"
+              data-bs-toggle="modal"
+              data-bs-target="#login"
+              data-bs-whatever="@mdo"
+            >
+              LOGIN
             </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-                <div class="navbar-nav text-btn">
-                    <a class="nav-link active navg" aria-current="page" href="./index.html">Inicio</a>
-                    <a class="nav-link navg" href="#coffee">Cafe</a>
-                    <a class="nav-link navg" href="#cafeteras">Cafeteras</a>
-                    <a class="nav-link navg" href="#molinillos">Molinillos</a>
-                    <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
-                        data-bs-target="#login" data-bs-whatever="@mdo">LOGIN</button>
-                </div>
-            </div>
+          </div>
         </div>
+      </div>
     </nav>
 
     <!-- FORMULARIO DE LOGIN -->
     <header class="bg-login">
-        <section class="contenedor-articulos py-5" id="contacto">
-            <div class="container">
-                <div class="col-10 m-auto">
-                    <div class="well well-sm text-center">
-                        <form class="form-horizontal" method="post">
-                            <fieldset>
-                                <legend class="text-start titulo-reg header">Create una cuenta</legend>
-                                <h4 class="text-start texto-reg header">Registrarte en este sitio es fácil. Simplemente
-                                    rellena los siguientes campos y tendrás una nueva cuenta creada para ti al instante.
-                                </h4>
-                                <br>
-                                <div class="row">
-                                    <div class="col-lg-6 col-12">
-                                        <legend class="text-start subtitulo-reg header">Detalles de la cuenta</legend>
-                                        
-                                        <h3 class="text-start texto-reg header">Correo electronico
-                                        </h3>
-                                        <div class="form-group pb-4">
-                                            <div class="col-md-10">
-                                                <input name="name" required type="email" class="form-control ">
-                                            </div>
-                                        </div>
-                                        <h3 class="text-start texto-reg header">Escribe una contraseña
-                                        </h3>
-                                        <div class="form-group pb-4">
-                                            <div class="col-md-10">
-                                                <input name="email" required type="password" class="form-control ">
-                                            </div>
-                                        </div>
-                                        <h3 class="text-start texto-reg header">Confirma la contraseña
-                                        </h3>
-                                        <div class="form-group pb-4">
-                                            <div class="col-md-10">
-                                                <input name="email" required type="password" class="form-control">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-12 pt-3 pt-lg-0">
-                                        <legend class="text-start subtitulo-reg header">Detalles del perfil</legend>
-                                        <h3 class="text-start texto-reg header">Nombre
-                                        </h3>
-                                        <div class="form-group pb-4">
-                                            <div class="col-md-10">
-                                                <input name="email" type="text" required class="form-control">
-                                            </div>
-                                        </div>
-                                        <h3 class="text-start texto-reg header">Apellido
-                                        </h3>
-                                        <div class="form-group pb-4">
-                                            <div class="col-md-10">
-                                                <input name="email" type="text" required class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="d-flex justify-content-start flex-wrap">
-                                            <div class="me-5">
-                                                <h3 class="text-start texto-reg header">Sexo
-                                                </h3>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault2" checked>
-                                                    <label
-                                                        class="form-check-label text-start texto-reg header d-flex w-auto"
-                                                        for="flexRadioDefault2">
-                                                        Hombre
-                                                    </label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                        id="flexRadioDefault1">
-                                                    <label
-                                                        class="form-check-label text-start texto-reg header d-flex w-auto"
-                                                        for="flexRadioDefault1">
-                                                        Mujer
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <h3 class="text-start texto-reg header">Fecha de nacimiento
-                                                </h3>
-                                                <input class="form-control " type="date">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="py-3 col-md-10 text-start">
-                                        <button type="submit" class="btn btn-primary btn-sm">ENVIAR</button>
-                                    </div>
-                                </div>
-                            </fieldset>
-                        </form>
+      <section class="contenedor-articulos py-5" id="contacto">
+        <div class="container">
+          <div class="col-10 m-auto">
+            <div class="well well-sm text-center">
+              <form class="form-horizontal" method="post">
+                <fieldset>
+                  <legend class="text-start titulo-reg header">
+                    Create una cuenta
+                  </legend>
+                  <h4 class="text-start texto-reg header">
+                    Registrarte en este sitio es fácil. Simplemente rellena los
+                    siguientes campos y tendrás una nueva cuenta creada para ti
+                    al instante.
+                  </h4>
+                  <br />
+                  <div class="row">
+                    <div class="col-lg-6 col-12">
+                      <legend class="text-start subtitulo-reg header">
+                        Detalles de la cuenta
+                      </legend>
+
+                      <h3 class="text-start texto-reg header">
+                        Correo electronico
+                      </h3>
+                      <div class="form-group pb-4">
+                        <div class="col-md-10">
+                          <input
+                            name="name"
+                            required
+                            type="email"
+                            class="form-control"
+                          />
+                        </div>
+                      </div>
+                      <h3 class="text-start texto-reg header">
+                        Escribe una contraseña
+                      </h3>
+                      <div class="form-group pb-4">
+                        <div class="col-md-10">
+                          <input
+                            name="email"
+                            required
+                            type="password"
+                            class="form-control"
+                          />
+                        </div>
+                      </div>
+                      <h3 class="text-start texto-reg header">
+                        Confirma la contraseña
+                      </h3>
+                      <div class="form-group pb-4">
+                        <div class="col-md-10">
+                          <input
+                            name="email"
+                            required
+                            type="password"
+                            class="form-control"
+                          />
+                        </div>
+                      </div>
                     </div>
-                </div>
+                    <div class="col-lg-6 col-12 pt-3 pt-lg-0">
+                      <legend class="text-start subtitulo-reg header">
+                        Detalles del perfil
+                      </legend>
+                      <h3 class="text-start texto-reg header">Nombre</h3>
+                      <div class="form-group pb-4">
+                        <div class="col-md-10">
+                          <input
+                            name="email"
+                            type="text"
+                            required
+                            class="form-control"
+                          />
+                        </div>
+                      </div>
+                      <h3 class="text-start texto-reg header">Apellido</h3>
+                      <div class="form-group pb-4">
+                        <div class="col-md-10">
+                          <input
+                            name="email"
+                            type="text"
+                            required
+                            class="form-control"
+                          />
+                        </div>
+                      </div>
+                      <div class="d-flex justify-content-start flex-wrap">
+                        <div class="me-5">
+                          <h3 class="text-start texto-reg header">Sexo</h3>
+                          <div class="form-check">
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              name="flexRadioDefault"
+                              id="flexRadioDefault2"
+                              checked
+                            />
+                            <label
+                              class="form-check-label text-start texto-reg header d-flex w-auto"
+                              for="flexRadioDefault2"
+                            >
+                              Hombre
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              name="flexRadioDefault"
+                              id="flexRadioDefault1"
+                            />
+                            <label
+                              class="form-check-label text-start texto-reg header d-flex w-auto"
+                              for="flexRadioDefault1"
+                            >
+                              Mujer
+                            </label>
+                          </div>
+                        </div>
+                        <div>
+                          <h3 class="text-start texto-reg header">
+                            Fecha de nacimiento
+                          </h3>
+                          <input class="form-control" type="date" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="py-3 col-md-10 text-start">
+                      <button type="submit" class="btn btn-primary btn-sm">
+                        ENVIAR
+                      </button>
+                    </div>
+                  </div>
+                </fieldset>
+              </form>
             </div>
-        </section>
-    
+          </div>
+        </div>
+      </section>
     </header>
 
     <!--Footer-->
@@ -168,13 +245,17 @@
                   <h5>Seguinos en</h5>
                   <hr />
                   <a class="p-2" href="">
-                    <i class="fab fa-facebook-square icons-footer social-icon"></i>
+                    <i
+                      class="fab fa-facebook-square icons-footer social-icon"
+                    ></i>
                   </a>
                   <a class="p-2" href="http://google.com">
-                      <i class="fab fa-instagram icons-footer social-icon"></i>
+                    <i class="fab fa-instagram icons-footer social-icon"></i>
                   </a>
                   <a class="p-2" href="http://twitter.com">
-                      <i class="fab fa-twitter-square icons-footer social-icon"></i>
+                    <i
+                      class="fab fa-twitter-square icons-footer social-icon"
+                    ></i>
                   </a>
                 </div>
               </div>
@@ -227,41 +308,74 @@
     </footer>
 
     <!-- MODAL LOGIN -->
-    <div class="modal fade" id="login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div
+      class="modal fade"
+      id="login"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
       <div class="modal-dialog">
-          <div class="modal-content login">
-              <div class="modal-header bg-light">
-                  <h5 class="modal-title bordes-top" id="exampleModalLabel">Acceder</h5>
-                  <img class="w-25" src="./images/Logo.png" alt="Logo">
-              </div>
-              <div class="modal-body contenedor-modal">
-                  <form>
-                      <div class="">
-                          <div class="mb-3">
-                              <label for="recipient-name" class="col-form-label copy-footer">Cuenta:</label>
-                              <input type="email" required class="form-control" id="recipient-name">
-                          </div>
-                          <div class="mb-3">
-                              <label for="message-text" class="col-form-label copy-footer">Contraseña:</label>
-                              <input type="password" required class="form-control" id="recipient-name">
-                              <a class="link-reg d-flex justify-content-end" href="./registrarse.html">¿Olvidaste tu Contraseña?</a>
-                          </div>
-                      </div>
-                      <div class="d-flex justify-content-between">
-                          <div>
-                              <a class="link-reg" href="./registrarse.html">Crear cuenta</a>
-                          </div>
-                          <div>
-                              <button type="button" class="btn btn-danger btn-sm"
-                                  data-bs-dismiss="modal">Cerrar</button>
-                              <button type="submit" class="btn btn-primary btn-sm">INGRESAR</button>
-                          </div>
-                      </div>
-                  </form>
-              </div>
+        <div class="modal-content login">
+          <div class="modal-header bg-light">
+            <h5 class="modal-title bordes-top" id="exampleModalLabel">
+              Acceder
+            </h5>
+            <img class="w-25" src="./images/Logo.png" alt="Logo" />
           </div>
+          <div class="modal-body contenedor-modal">
+            <form>
+              <div class="">
+                <div class="mb-3">
+                  <label for="recipient-name" class="col-form-label copy-footer"
+                    >Cuenta:</label
+                  >
+                  <input
+                    type="email"
+                    required
+                    class="form-control"
+                    id="recipient-name"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="message-text" class="col-form-label copy-footer"
+                    >Contraseña:</label
+                  >
+                  <input
+                    type="password"
+                    required
+                    class="form-control"
+                    id="recipient-name"
+                  />
+                  <a
+                    class="link-reg d-flex justify-content-end"
+                    href="./registrarse.html"
+                    >¿Olvidaste tu Contraseña?</a
+                  >
+                </div>
+              </div>
+              <div class="d-flex justify-content-between">
+                <div>
+                  <a class="link-reg" href="./registrarse.html">Crear cuenta</a>
+                </div>
+                <div>
+                  <button
+                    type="button"
+                    class="btn btn-danger btn-sm"
+                    data-bs-dismiss="modal"
+                  >
+                    Cerrar
+                  </button>
+                  <button type="submit" class="btn btn-primary btn-sm">
+                    INGRESAR
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
-  </div> 
+    </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
