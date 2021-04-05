@@ -6,6 +6,7 @@ const precioDom = document.getElementById("inputPrecio");
 const stockDom = document.getElementById("inputStock");
 const tablaDom = document.getElementById("tabla");
 const editarForm = document.getElementById("formularioEditar");
+const editarTipoInput = document.getElementById("editarTipo");
 const editarMarcaInput = document.getElementById("editarMarca");
 const editarDescripcionInput = document.getElementById("editarDescripcion");
 const editarPrecioInput = document.getElementById("editarPrecio");
@@ -32,7 +33,11 @@ formularioDom.onsubmit = function (e) {
   const json = JSON.stringify(productos);
   localStorage.setItem("productos", json);
   mostrarProductos();
+  mostrarProductosIndex();
   formularioDom.reset();
+/*   const modalDivNew = document.getElementById("exampleModal");
+  const modalBootstrapNew = bootstrap.Modal.getInstance(modalDivNew);
+  modalBootstrapNew.hide(); */
 };
 
 function mostrarProductos() {
@@ -74,6 +79,7 @@ function eliminarProducto(id) {
   localStorage.setItem("productos", json);
   productos = productosFiltrados;
   mostrarProductos();
+  mostrarProductosIndex();
 }
 
 function mostrarDetalle(id) {
@@ -82,12 +88,15 @@ function mostrarDetalle(id) {
   const detallesProducto = `
       <p>Tipo: ${productoEncontrado.tipo}</p>
       <p>Marca: ${productoEncontrado.marca}</p>
-
+      <p>Descripción: ${productoEncontrado.descripcion}</p>
+      <p>Precio: ${productoEncontrado.precio}</p>
+      <p>Stock: ${productoEncontrado.stock}</p>
   `;
   detalleDiv.innerHTML = detallesProducto;
 }
 function cargarModalEditar(id) {
   const productoEncontrado = productos.find((producto) => producto.id === id);
+  editarTipoInput.value = productoEncontrado.tipo;
   editarMarcaInput.value = productoEncontrado.marca;
   editarDescripcionInput.value = productoEncontrado.descripcion;
   editarPrecioInput.value = productoEncontrado.precio;
@@ -101,6 +110,7 @@ editarForm.onsubmit = function editarProducto(e) {
     if (producto.id === productoId) {
       const productoModificado = {
         ...producto,
+        tipo: editarTipoInput.value,
         marca: editarMarcaInput.value,
         descripcion: editarDescripcionInput.value,
         precio: editarPrecioInput.value,
@@ -116,6 +126,7 @@ editarForm.onsubmit = function editarProducto(e) {
   localStorage.setItem("productos", json);
   productos = productosModificado;
   mostrarProductos();
+  mostrarProductosIndex();
   const modalDiv = document.getElementById("modalEditar");
   const modalBootstrap = bootstrap.Modal.getInstance(modalDiv);
   modalBootstrap.hide();
@@ -139,6 +150,7 @@ busquedaForm.onsubmit = function busquedaProducto(e) {
   });
   productos = productosFiltrados;
   mostrarProductos();
+  mostrarProductosIndex();
   const alerta = document.getElementById("alertaBusqueda");
   if (productosFiltrados.length === 0) {
     alerta.classList.remove("d-none");
@@ -151,6 +163,33 @@ const limpiarFiltro = () => {
   productos = JSON.parse(localStorage.getItem("productos")) || [];
   busquedaForm.reset();
   mostrarProductos();
+  mostrarProductosIndex();
   const alerta = document.getElementById("alertaBusqueda");
   alerta.classList.add("d-none");
 };
+
+/* Mostrar tarjetas de Productos */
+
+const tablaDomIndex = document.getElementById("tablaIndex"); 
+
+function mostrarProductosIndex() {
+  let filasIndex = [];
+  for (let i = 0; i < productos.length; i++) {
+    const producto = productos[i];
+    const tarjetas = `
+                <div class="card" style="width: 18rem;">
+                    <img src="./images/Logo.png" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">${producto.descripcion}</h5>
+                    <h7 class="card-title">${producto.tipo}</h7>
+                    <p class="card-text">${producto.marca}</p>
+                    <a href="#" class="btn btn-primary">${producto.precio}</a>
+                  </div>
+                </div>
+      `;
+    filasIndex.push(tarjetas);
+  }
+  tablaDomIndex.innerHTML = filasIndex.join("");
+};
+
+mostrarProductosIndex();

@@ -92,17 +92,26 @@
 <br>
 <div class="tituloprincipal">
 <h1>Listado de Productos</h1>
-
 <hr>
 </div>
+<!-- Busqueda -->
+<div class="mt-5 mb-3">
+  <form id="formBusqueda">
+    <label for="busqueda">Búsqueda por nombre y correo</label>
+    <input id="busqueda" type="text">
+    <button type="submit" class="btn btn-warning">Buscar</button>
+    <button type="button" class="btn btn-dark" onclick="limpiarFiltro()">Limpiar</button>
+  </form>
+  <div id="alertaBusqueda" class="alert alert-info d-none">No hay resultados para la búsqueda</div>
+</div>
+
 <!-- Modal -->
 <div
   class="modal fade"
   id="exampleModal"
   tabindex="-1"
   aria-labelledby="exampleModalLabel"
-  aria-hidden="true"
->
+  aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -116,9 +125,6 @@
       </div>
       <div class="modal-body">
         <div class="card m-auto p-3 bg-light" style="max-width: 600px">
-
-
-
           <form id="formulario">
             <div class="form-group">
               <label for="inputTipo">Ingresar Tipo de Producto</label>
@@ -179,11 +185,9 @@
           </form>
         </div>
       </div>
-
     </div>
   </div>
 </div>
-
 
     <!-- Tabla que muestra los productos -->
 
@@ -196,6 +200,7 @@
             <th scope="col">Descripción</th>
             <th scope="col">Precio</th>
             <th scope="col">Stock</th>
+            <th scope="col">Acciones</th>
           </tr>
         </thead>
         <tbody id="tabla"></tbody>
@@ -212,6 +217,19 @@
         </tr> -->
       </table>
     </div>
+<!-- Mostrar tarjetas de Productos -->
+
+<div class="tituloprincipal mt-5 mb-3">
+  <h1>Productos Index</h1>
+  <hr>
+</div>
+
+<div class="container mt-5 mb-3">
+  <div  class="container" id="tablaIndex">
+    
+  </div>
+</div>
+
 
     <!-- Modal Detalle Nota -->
     <div
@@ -258,6 +276,13 @@
         </div>
         <form id="formularioEditar">
           <div class="modal-body">
+            <label for="editarTipo">Ingresar Tipo de Producto</label>
+              <select id="editarTipo" required>
+                <option>Cafe</option>
+                <option>Máquina</option>
+                <option>Molinillo</option>
+              </select>
+            <br>
             <label for="editarMarca">Ingresar Marca</label>
             <input type="text" id="editarMarca" required>
             <br>
@@ -278,6 +303,7 @@
       </div>
     </div>
 
+    
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
