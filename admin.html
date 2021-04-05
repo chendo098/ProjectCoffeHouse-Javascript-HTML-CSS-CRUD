@@ -20,7 +20,7 @@
   <body>
     <header>
 <!-- Navbar-->
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top marron">
   <div class="container-fluid justify-content-between">
     <!-- Left elements -->
     <div class="d-flex">
@@ -28,10 +28,10 @@
       <a class="navbar-brand me-2 mb-1 d-flex align-items-center" href="#">
         <img
           src="./images/cafe.png"
-          height="20"
+          height="40"
           alt=""
           loading="lazy"
-          style="margin-top: 2px; margin-right: 10px;"
+          style="margin-top: 2px; margin-right: 22px; margin-left: 10px;"
         />Administración Café Java Script
       </a>
 
@@ -44,7 +44,11 @@
     <!-- Right elements -->
     <ul class="navbar-nav flex-row">
       <li class="nav-item me-3 me-lg-1">
-        <a class="nav-link d-sm-flex align-items-sm-center" href="#">
+        <a class="nav-link d-sm-flex align-items-sm-center" href="#"
+        type="button"
+        class="btn btn-primary"
+        data-mdb-toggle="modal"
+        data-mdb-target="#exampleModal">
           <img
             src="./images/logo mas.png"
             class="rounded-circle"
@@ -83,82 +87,103 @@
 <!-- Navbar -->
 <br>
 <br>
+<br>
+<br>
+<br>
+<div class="tituloprincipal">
+<h1>Listado de Productos</h1>
+
+<hr>
+</div>
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Ingrese producto nuevo</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-mdb-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="card m-auto p-3 bg-light" style="max-width: 600px">
 
 
-    <div class="card m-auto p-3 mt-4 bg-light" style="max-width: 600px">
 
-
-
-      <form id="formulario">
-        <div class="form-group">
-          <label for="inputTipo">Ingresar Tipo de Producto</label>
-          <br />
-          <select id="inputTipo" required>
-            <option>Cafe</option>
-            <option>Máquina</option>
-            <option>Molinillo</option>
-          </select>
-          
-          </div>
-          <br>
-          <div>
-          <label for="inputMarca">Marca</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputMarca"
-            placeholder="Ingrese Marca"
-            required
-            maxlength="60"
-          />
+          <form id="formulario">
+            <div class="form-group">
+              <label for="inputTipo">Ingresar Tipo de Producto</label>
+              <br />
+              <select id="inputTipo" required>
+                <option>Cafe</option>
+                <option>Máquina</option>
+                <option>Molinillo</option>
+              </select>
+              
+              </div>
+              <br>
+              <div>
+              <label for="inputMarca">Marca</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputMarca"
+                placeholder="Ingrese Marca"
+                required
+                maxlength="60"
+              />
+            </div>
+            <div>
+              <label for="inputDescripcion">Descripción</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputDescripcion"
+                placeholder="Ingrese Descripción"
+                required
+                maxlength="60"
+              />
+            </div>
+            <div>
+              <label for="inputPrecio">Precio</label>
+              <input
+                type="number"
+                class="form-control"
+                id="inputPrecio"
+                placeholder="Ingrese Precio"
+                required
+                maxlength="60"
+              />
+            </div>
+            <div>
+              <label for="inputStock">Stock</label>
+              <input
+                type="number"
+                class="form-control"
+                id="inputStock"
+                placeholder="Ingrese Stock Disponible"
+                required
+                maxlength="60"
+              />
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">ENVIAR</button>
+          </form>
         </div>
-        <div>
-          <label for="inputDescripcion">Descripción</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputDescripcion"
-            placeholder="Ingrese Descripción"
-            required
-            maxlength="60"
-          />
-        </div>
-        <div>
-          <label for="inputPrecio">Precio</label>
-          <input
-            type="number"
-            class="form-control"
-            id="inputPrecio"
-            placeholder="Ingrese Precio"
-            required
-            maxlength="60"
-          />
-        </div>
-        <div>
-          <label for="inputStock">Stock</label>
-          <input
-            type="number"
-            class="form-control"
-            id="inputStock"
-            placeholder="Ingrese Stock Disponible"
-            required
-            maxlength="60"
-          />
-        </div>
-        <button type="submit" class="btn btn-primary mt-3">ENVIAR</button>
-      </form>
+      </div>
+
     </div>
-
-    <!-- Búsqueda Productos -->
-    <div class="mt-5 mb-3 misnotas-div">
-      <form class="mx-3" id="formBusqueda">
-          <label class="fw-bold busqueda-label" for="busqueda">Búsqueda de Producto</label>
-          <input class="mx-3 busqueda-input" id="busqueda" type="text">
-          <button class="btn btn-dark boton-busqueda" type="submit">Buscar</button>
-          <button class="btn btn-secondary mx-2 boton-limpiar" type="button"
-              onclick="limpiarFiltro()">Limpiar</button>
-      </form>
   </div>
+</div>
+
 
     <!-- Tabla que muestra los productos -->
 

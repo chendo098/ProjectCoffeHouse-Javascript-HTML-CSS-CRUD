@@ -103,10 +103,11 @@
   font-weight: 600;
 }
 
-.logoimagen {
-  width: 60px;
-  height: 60px;
-  margin-top: 5px;
-  margin-right: 22px;
-  margin-left: 5px;
+.marron {
+  background-color: maroon !important;
+}
+
+.tituloprincipal {
+  display: flex;
+  justify-content: center;
 }
