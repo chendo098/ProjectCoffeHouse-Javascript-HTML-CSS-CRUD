@@ -33,11 +33,10 @@ formularioDom.onsubmit = function (e) {
   const json = JSON.stringify(productos);
   localStorage.setItem("productos", json);
   mostrarProductos();
-  mostrarProductosIndex();
+  
   formularioDom.reset();
   const modalDivNew = document.getElementById("exampleModal");
   const modalBootstrapNew = bootstrap.Modal.getInstance(modalDivNew);
-  console.log("formularioDom.onsubmit -> modalBootstrapNew", modalBootstrapNew)
   modalBootstrapNew.hide();
 };
 
@@ -80,7 +79,7 @@ function eliminarProducto(id) {
   localStorage.setItem("productos", json);
   productos = productosFiltrados;
   mostrarProductos();
-  mostrarProductosIndex();
+  
 }
 
 function mostrarDetalle(id) {
@@ -127,7 +126,7 @@ editarForm.onsubmit = function editarProducto(e) {
   localStorage.setItem("productos", json);
   productos = productosModificado;
   mostrarProductos();
-  mostrarProductosIndex();
+  
   const modalDiv = document.getElementById("modalEditar");
   const modalBootstrap = bootstrap.Modal.getInstance(modalDiv);
   modalBootstrap.hide();
@@ -151,7 +150,7 @@ busquedaForm.onsubmit = function busquedaProducto(e) {
   });
   productos = productosFiltrados;
   mostrarProductos();
-  mostrarProductosIndex();
+  
   const alerta = document.getElementById("alertaBusqueda");
   if (productosFiltrados.length === 0) {
     alerta.classList.remove("d-none");
@@ -164,7 +163,7 @@ const limpiarFiltro = () => {
   productos = JSON.parse(localStorage.getItem("productos")) || [];
   busquedaForm.reset();
   mostrarProductos();
-  mostrarProductosIndex();
+  
   const alerta = document.getElementById("alertaBusqueda");
   alerta.classList.add("d-none");
 };
