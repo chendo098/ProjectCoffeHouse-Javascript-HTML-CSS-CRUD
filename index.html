@@ -159,15 +159,27 @@
     <!--Seccion Tres Productos-->
     <section id="productos" class="page-section m-5">
       <h1 class="text-center my-5"><b>MAS VENDIDOS</b></h1>
+
+      <!-- Busqueda -->
+<div class="d-flex justify-content-center text-center space-around mt-5 mb-3">
+  <div id="formBusqueda">
+    <button type="submit" id="cat1" class="btn" style="background-color: #efb810;">Café</button>
+    <button type="submit" id="cat2" class="btn " style="background-color: #efb810;">Máquinas</button>
+    <button type="submit" id="cat3" class="btn " style="background-color: #efb810;">Molinillos</button>
+    <button type="submit" onclick="limpiarFiltro()" id="all" class="btn " style="background-color: #efb810;">Todos</button>
+  </div>
+  <!-- <div id="alertaBusqueda" class="alert alert-info d-none">No hay resultados para la búsqueda</div> -->
+</div>
+
       <!-- Mostrar tarjetas de Productos -->
 
-<div class="container mt-5 mb-3">
-  <div  class="row" id="tablaIndex">
+<div class="container mt-5 mb-5">
+  <div  class="row " id="tablaIndex">
     
   </div>
 </div>
 
-      <div class="text-center m-auto container row row-cols-1 row-cols-md-3">
+<!--       <div class="text-center m-auto container row row-cols-1 row-cols-md-3">
         <div class="col mb-4">
           <button
             type="button"
@@ -183,7 +195,7 @@
               />
               <div class="card-body">
                 <h5 class="card-title">Capsulas</h5>
-                <!-- <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
               </div>
             </div>
           </button>
@@ -204,7 +216,7 @@
               />
               <div class="card-body">
                 <h5 class="card-title">Cafetera de 20 bar</h5>
-                <!-- <p class="card-text">This is a short card.</p> -->
+                <p class="card-text">This is a short card.</p>
               </div>
             </div>
           </button>
@@ -224,7 +236,7 @@
               />
               <div class="card-body">
                 <h5 class="card-title">Molinillo</h5>
-                <!-- <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p> -->
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
               </div>
             </div>
           </button>
@@ -244,7 +256,7 @@
               />
               <div class="card-body">
                 <h5 class="card-title">MODELO</h5>
-                <!-- <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
               </div>
             </div>
           </button>
@@ -264,7 +276,7 @@
               />
               <div class="card-body">
                 <h5 class="card-title">LOREN</h5>
-                <!-- <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
               </div>
             </div>
           </button>
@@ -284,12 +296,12 @@
               />
               <div class="card-body">
                 <h5 class="card-title">LORENS</h5>
-                <!-- <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
               </div>
             </div>
           </button>
         </div>
-      </div>
+      </div> -->
     </section>
     <!--FORMAS DE PAGO-->
     <section id="formaPago" class="bg-color page-section py-3">

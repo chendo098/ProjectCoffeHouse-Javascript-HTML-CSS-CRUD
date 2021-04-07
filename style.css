@@ -114,6 +114,7 @@
 
 .cardProducto {
   text-align: center;
+  
 }
 
 .container {
@@ -121,4 +122,5 @@
   flex-wrap: nowrap;
   align-items: center;
   justify-content: space-around;
+  
 }
