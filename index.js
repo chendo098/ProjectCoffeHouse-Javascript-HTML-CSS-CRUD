@@ -5,15 +5,15 @@ const alertaDiv = document.getElementById("alerta");
 const admin = { email: "admin@cafe.com", pass: "admin" };
 const json = localStorage.getItem("productos");
 let productos = JSON.parse(json) || [];
-const json2 = localStorage.getItem('usuarios'); // Traer de localStorage el dato asociado a la key "usuarios".
-let usuarios = JSON.parse(json2) || [];
+const json3 = localStorage.getItem('usuarios'); // Traer de localStorage el dato asociado a la key "usuarios".
+let usuarios3 = JSON.parse(json3) || [];
 
 formularioForm.onsubmit = function (event) {
   event.preventDefault();
   const coincideEmail = admin.correo === correoInput.value;
   const coincidePass = admin.pass === passwordInput.value;
-  const coincideUsuarioEmail = usuarios.correo === correoInput.value;
-  const coincideUsuarioPass = usuarios.pass === passwordInput.value;
+  const coincideUsuarioEmail = usuarios3.correo === correoInput.value;
+  const coincideUsuarioPass = usuarios3.pass === passwordInput.value;
   if (coincideEmail && coincidePass) {
     alert("Bienvenido Administrador");
     window.location.href = "./admin.html";
