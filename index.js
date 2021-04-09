@@ -1,24 +1,32 @@
 const formularioForm = document.getElementById("formulario");
-const emailInput = document.getElementById("inputEmail");
-const passInput = document.getElementById("inputPass");
+const correoInput = document.getElementById("inputEmail");
+const passwordInput = document.getElementById("inputPass");
 const alertaDiv = document.getElementById("alerta");
-const usuario = { email: "admin@cafe.com", pass: "admin" };
+const admin = { email: "admin@cafe.com", pass: "admin" };
 const json = localStorage.getItem("productos");
 let productos = JSON.parse(json) || [];
+const json2 = localStorage.getItem('usuarios'); // Traer de localStorage el dato asociado a la key "usuarios".
+let usuarios = JSON.parse(json2) || [];
 
 formularioForm.onsubmit = function (event) {
   event.preventDefault();
-  const coincideEmail = usuario.email === emailInput.value;
-  const coincidePass = usuario.pass === passInput.value;
+  const coincideEmail = admin.correo === correoInput.value;
+  const coincidePass = admin.pass === passwordInput.value;
+  const coincideUsuarioEmail = usuarios.correo === correoInput.value;
+  const coincideUsuarioPass = usuarios.pass === passwordInput.value;
   if (coincideEmail && coincidePass) {
     alert("Bienvenido Administrador");
     window.location.href = "./admin.html";
-  } else {
-    // alertaDiv.style = "display: block !important"
-    alert("USUARIO SIN PERMISO DE ADMINISTRADOR");
-    // console.log('datos incorrectos')
-  }
-};
+  } else if (coincideUsuarioEmail && coincideUsuarioPass){
+      alert("Bienvenido Usuario");
+      window.location.href = "./index.html";
+    } else{
+      alert("USUARIO NO REGISTRADO");
+    
+
+    }
+  };
+
 
 /* Mostrar tarjetas de Productos */
 

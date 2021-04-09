@@ -172,3 +172,97 @@ const limpiarFiltro = () => {
   const alerta = document.getElementById("alertaBusqueda");
   alerta.classList.add("d-none");
 };
+
+
+/// TABLA LOGIN
+
+const editarFormUsuarios = document.getElementById('formularioEditarUsuarios');
+const nombreEditar = document.getElementById('editarNombre');
+const apellidoEditar = document.getElementById('editarApellido');
+const passEditar = document.getElementById('editarPass');
+const emailEditar = document.getElementById('editarEmail');
+const usuariosTabla = document.getElementById('tablaUsuarios');
+const json2 = localStorage.getItem('usuarios'); // Traer de localStorage el dato asociado a la key "usuarios".
+let usuarios = JSON.parse(json2) || []; // Convertir datos de un string JSON a código JavaScript.
+let usuarioId = '';
+
+function mostrarUsuarios() {
+  const usuariosMap = usuarios.map(function (usuario) { 
+      return `
+          <tr>
+             <td>${usuario.correo}</td>
+             <td>${usuario.nombre}</td>
+             <td>${usuario.apellido}</td>
+             <td>${usuario.nacimiento}</td>
+             <td>${usuario.sexo}</td>
+             <td>
+             <button onclick="mostrarDetallesUsuarios('${usuario.id}')" type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalDetalleUs">Ver detalle</button>
+             <button onclick="cargarModalEditarUsuarios('${usuario.id}')" type="button" class="btn btn-success btn-sm" data-bs-toggle="modal"
+             data-bs-target="#modalEditarUsuarios">Editar</button>
+             <button onclick="eliminarUsuario('${usuario.id}')" class="btn btn-danger btn-sm">Eliminar</button>
+
+             </td>
+          </tr> 
+          `;
+  })
+  usuariosTabla.innerHTML = usuariosMap.join('')
+}
+
+function eliminarUsuario(id) {
+  const confirmar = confirm("Confirme para eliminar Usuario.");
+  if (!confirmar) {
+    return;
+  }
+  const usuariosFiltrado = usuarios.filter((usuario) => usuario.id !== id)
+  const json2 = JSON.stringify(usuariosFiltrado);
+  localStorage.setItem('usuarios', json2);
+  usuarios = usuariosFiltrado;
+  mostrarUsuarios();
+}
+
+function mostrarDetallesUsuarios(id) {
+  const usuarioEncontrado = usuarios.find((usuario) => usuario.id === id);
+  const detalleDiv = document.getElementById('detalleUsuario');
+  const fechaUsuario = new Date (usuarioEncontrado.registro);
+  const detallesUsuarios = `
+      <p>Nombre: ${usuarioEncontrado.nombre}</p>
+      <p>Apellido: ${usuarioEncontrado.apellido}</p>
+      <p>Email: ${usuarioEncontrado.correo}</p>
+      <p>Pass: ${usuarioEncontrado.pass}</p>
+      <p>Fecha de nacimiento: ${usuarioEncontrado.nacimiento}</p>
+      <p>Fecha de registro: ${fechaUsuario.toLocaleString()}</p>
+  `;
+  detalleDiv.innerHTML = detallesUsuarios;
+}
+
+function cargarModalEditarUsuarios(id) {
+  const usuarioEncontrado = usuarios.find((usuario) => usuario.id === id);
+  nombreEditar.value = usuarioEncontrado.nombre;
+  apellidoEditar.value = usuarioEncontrado.apellido;
+  emailEditar.value = usuarioEncontrado.correo;
+  passEditar.value = usuarioEncontrado.pass;
+  usuarioId = usuarioEncontrado.id;
+  
+}
+
+function editarUsuario(e) {
+  e.preventDefault();
+  const usuarioModificado = usuarios.map((usuario) => (usuario.id === usuarioId) ? {
+      ...usuario,
+      nombre: nombreEditar.value,
+      apellido: apellidoEditar.value,
+      email: emailEditar.value,
+      pass: passEditar.value,
+  }
+      : usuario
+  );
+
+  const json2 = JSON.stringify(usuarioModificado);
+  localStorage.setItem('usuarios', json2);
+  usuarios = usuarioModificado;
+  mostrarUsuarios();
+  
+};
+
+mostrarUsuarios();
+editarFormUsuarios.onsubmit = editarUsuario;

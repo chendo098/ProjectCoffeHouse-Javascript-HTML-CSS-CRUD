@@ -32,7 +32,7 @@
           alt=""
           loading="lazy"
           style="margin-top: 2px; margin-right: 22px; margin-left: 10px;"
-        />Administración Café Java Script
+        />Administración The Coffee House
       </a>
 
 
@@ -43,6 +43,7 @@
 
     <!-- Right elements -->
     <ul class="navbar-nav flex-row">
+      
       <li class="nav-item me-3 me-lg-1">
         <a class="nav-link d-sm-flex align-items-sm-center" href="#"
         type="button"
@@ -116,12 +117,9 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Ingrese producto nuevo</h5>
-        <button
-          type="button"
-          class="btn-close"
-          data-mdb-dismiss="modal"
-          aria-label="Close"
-        ></button>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
       <div class="modal-body">
         <div class="card m-auto p-3 bg-light" style="max-width: 600px">
@@ -238,6 +236,39 @@
       </table>
     </div>
 
+    
+    <!-- Tabla que muestra los usuarios -->
+
+      <div class="tituloprincipal pt-5">
+      <h1>Listado de Usuarios</h1>
+      </div>
+    <div class="container">
+      <table class="table table-bordered mt-5">
+        <thead>
+          <tr>
+            <th scope="col">Email</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Fecha de nacimiento</th>
+            <th scope="col">Sexo</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tablaUsuarios"></tbody>
+        <!-- <tr>
+          <td>Tipo</td>
+          <td>Descripcion</td>
+          <td>
+            <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
+              data-bs-target="#modalDetalle">Ver detalle</button>
+            <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal"
+              data-bs-target="#modalEditar">Editar</button>
+            <button onclick="eliminarUsuario()" class="btn btn-danger btn-sm">Eliminar</button>
+          </td>
+        </tr> -->
+      </table>
+    </div>
+
     <!-- Modal Detalle Nota -->
     <div
       class="modal fade"
@@ -250,12 +281,9 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Datos de usuario</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
           <div id="detalleProducto" class="modal-body">
             <!-- <p>Titulo</p>
@@ -279,7 +307,9 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Editar Producto</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
         <form id="formularioEditar">
           <div class="modal-body">
@@ -312,6 +342,63 @@
         </form>
       </div>
     </div>
+
+      <!-- Modal Detalle Usuario -->
+  <div class="modal fade" id="modalDetalleUs" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Datos de usuario</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div id="detalleUsuario" class="modal-body">
+          <!-- <p>Email</p>
+          <p>Nombre</p>
+          <p>Rol</p>
+          <p>Fecha de registro</p> -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+   <!-- Modal Editar Usuario -->
+   <div class="modal fade" id="modalEditarUsuarios" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Editar usuario</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form id="formularioEditarUsuarios">
+          <div class="modal-body">
+            <label for="editarNombre">Ingresar nombre</label>
+            <input type="text" id="editarNombre">
+            <br>
+            <label for="editarApellido">Ingresar Apellido</label>
+            <input type="text" id="editarApellido">
+            <br>
+            <label for="editarPass">Ingresar nueva Contraseña</label>
+            <input type="text" id="editarPass">
+            <br>
+            <label for="editarEmail">Ingresar Email</label>
+            <input type="text" id="editarEmail">
+            <br>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-primary" type="submit">Enviar</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 
     
     <!-- Optional JavaScript; choose one of the two! -->
