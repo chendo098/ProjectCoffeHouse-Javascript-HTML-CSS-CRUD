@@ -6,7 +6,6 @@ const usuario = { email: "admin@cafe.com", pass: "admin" };
 const json = localStorage.getItem("productos");
 let productos = JSON.parse(json) || [];
 
-
 formularioForm.onsubmit = function (event) {
   event.preventDefault();
   const coincideEmail = usuario.email === emailInput.value;
@@ -23,7 +22,7 @@ formularioForm.onsubmit = function (event) {
 
 /* Mostrar tarjetas de Productos */
 
-const tablaDomIndex = document.getElementById("tablaIndex"); 
+const tablaDomIndex = document.getElementById("tablaIndex");
 
 function mostrarProductosIndex() {
   let filasIndex = [];
@@ -31,7 +30,7 @@ function mostrarProductosIndex() {
     const producto = productos[i];
     const tarjetas = `
                 <div class="cardProducto text-center m-auto container row row-cols-1 row-cols-md-3" style="width: 18rem;">
-                    <img src="./images/Logo.png" class="card-img-top" alt="...">
+                    <img src="${producto.imagen}" class="card-img-top" alt="...">
                   <div class="card-body">
                     <h5 class="card-title">${producto.descripcion}</h5>
                     <h7 class="card-title">${producto.tipo}</h7>
@@ -43,13 +42,13 @@ function mostrarProductosIndex() {
     filasIndex.push(tarjetas);
   }
   tablaDomIndex.innerHTML = filasIndex.join("");
-};
+}
 
 mostrarProductosIndex();
 
 /* Filtro por Botón */
 /* Café */
-const primerFiltro = document.getElementById('cat1')
+const primerFiltro = document.getElementById("cat1");
 primerFiltro.onclick = function (e) {
   e.preventDefault();
   const productosLocal = JSON.parse(localStorage.getItem("productos")) || [];
@@ -57,15 +56,13 @@ primerFiltro.onclick = function (e) {
   const productosFiltrados = productosLocal.filter((producto) => {
     const tipoProducto = producto.tipo;
 
-    return (
-      tipoProducto.includes(termino)
-    );
+    return tipoProducto.includes(termino);
   });
   productos = productosFiltrados;
   mostrarProductosIndex();
 };
 /* Máquinas */
-const segundoFiltro = document.getElementById('cat2')
+const segundoFiltro = document.getElementById("cat2");
 segundoFiltro.onclick = function (e) {
   e.preventDefault();
   const productosLocal = JSON.parse(localStorage.getItem("productos")) || [];
@@ -73,15 +70,13 @@ segundoFiltro.onclick = function (e) {
   const productosFiltrados = productosLocal.filter((producto) => {
     const tipoProducto = producto.tipo;
 
-    return (
-      tipoProducto.includes(termino)
-    );
+    return tipoProducto.includes(termino);
   });
   productos = productosFiltrados;
   mostrarProductosIndex();
 };
 /* Molinillo */
-const tercerFiltro = document.getElementById('cat3')
+const tercerFiltro = document.getElementById("cat3");
 tercerFiltro.onclick = function (e) {
   e.preventDefault();
   const productosLocal = JSON.parse(localStorage.getItem("productos")) || [];
@@ -89,9 +84,7 @@ tercerFiltro.onclick = function (e) {
   const productosFiltrados = productosLocal.filter((producto) => {
     const tipoProducto = producto.tipo;
 
-    return (
-      tipoProducto.includes(termino)
-    );
+    return tipoProducto.includes(termino);
   });
   productos = productosFiltrados;
   mostrarProductosIndex();

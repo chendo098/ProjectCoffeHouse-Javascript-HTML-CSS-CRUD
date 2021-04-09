@@ -104,6 +104,7 @@ function cargarModalEditar(id) {
   editarDescripcionInput.value = productoEncontrado.descripcion;
   editarPrecioInput.value = productoEncontrado.precio;
   editarStockInput.value = productoEncontrado.stock;
+  editarImagenInput.value = productoEncontrado.imagen;
   productoId = productoEncontrado.id;
 }
 
@@ -118,6 +119,7 @@ editarForm.onsubmit = function editarProducto(e) {
         descripcion: editarDescripcionInput.value,
         precio: editarPrecioInput.value,
         stock: editarStockInput.value,
+        imagen: editarImagenInput.value,
       };
       return productoModificado;
     } else {
