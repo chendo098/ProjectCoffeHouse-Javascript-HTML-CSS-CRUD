@@ -4,6 +4,7 @@ const marcaDom = document.getElementById("inputMarca");
 const descripcionDom = document.getElementById("inputDescripcion");
 const precioDom = document.getElementById("inputPrecio");
 const stockDom = document.getElementById("inputStock");
+const imagenDom = document.getElementById("inputImagen");
 const tablaDom = document.getElementById("tabla");
 const editarForm = document.getElementById("formularioEditar");
 const editarTipoInput = document.getElementById("editarTipo");
@@ -11,6 +12,7 @@ const editarMarcaInput = document.getElementById("editarMarca");
 const editarDescripcionInput = document.getElementById("editarDescripcion");
 const editarPrecioInput = document.getElementById("editarPrecio");
 const editarStockInput = document.getElementById("editarStock");
+const editarImagenInput = document.getElementById("editarImagen");
 const busquedaForm = document.getElementById("formBusqueda");
 const json = localStorage.getItem("productos");
 let productos = JSON.parse(json) || [];
@@ -28,12 +30,13 @@ formularioDom.onsubmit = function (e) {
     descripcion: descripcionDom.value,
     precio: precioDom.value,
     stock: stockDom.value,
+    imagen: imagenDom.value,
   };
   productos.push(producto);
   const json = JSON.stringify(productos);
   localStorage.setItem("productos", json);
   mostrarProductos();
-  
+
   formularioDom.reset();
   const modalDivNew = document.getElementById("exampleModal");
   const modalBootstrapNew = bootstrap.Modal.getInstance(modalDivNew);
@@ -51,6 +54,7 @@ function mostrarProductos() {
               <td>${producto.descripcion}</td>
               <td>${producto.precio}</td>
               <td>${producto.stock}</td>
+              <td>${producto.imagen}</td>
               <td>
               <button onclick="mostrarDetalle('${producto.id}')" type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalDetalle">Ver Producto</button>
               <button onclick="cargarModalEditar('${producto.id}')" type="button" class="btn btn-success btn-sm" data-bs-toggle="modal"
@@ -79,7 +83,6 @@ function eliminarProducto(id) {
   localStorage.setItem("productos", json);
   productos = productosFiltrados;
   mostrarProductos();
-  
 }
 
 function mostrarDetalle(id) {
@@ -126,7 +129,7 @@ editarForm.onsubmit = function editarProducto(e) {
   localStorage.setItem("productos", json);
   productos = productosModificado;
   mostrarProductos();
-  
+
   const modalDiv = document.getElementById("modalEditar");
   const modalBootstrap = bootstrap.Modal.getInstance(modalDiv);
   modalBootstrap.hide();
@@ -150,7 +153,7 @@ busquedaForm.onsubmit = function busquedaProducto(e) {
   });
   productos = productosFiltrados;
   mostrarProductos();
-  
+
   const alerta = document.getElementById("alertaBusqueda");
   if (productosFiltrados.length === 0) {
     alerta.classList.remove("d-none");
@@ -163,9 +166,7 @@ const limpiarFiltro = () => {
   productos = JSON.parse(localStorage.getItem("productos")) || [];
   busquedaForm.reset();
   mostrarProductos();
-  
+
   const alerta = document.getElementById("alertaBusqueda");
   alerta.classList.add("d-none");
 };
-
-

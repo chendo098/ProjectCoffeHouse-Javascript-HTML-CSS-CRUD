@@ -181,6 +181,15 @@
                 maxlength="60"
               />
             </div>
+            <div>
+              <label for="inputImagen">Imagen Producto</label>
+              <br/>
+              <select id="inputImagen" required>
+                <option value="http://www.duckduckgo.com">Cafe</option>
+                <option value="http://www.google.com">Molinillo</option>
+                <option value="http://www.yahoo.com">Maquina</option>
+              </select>
+            </div>
             <button type="submit" class="btn btn-primary mt-3">ENVIAR</button>
           </form>
         </div>
@@ -200,6 +209,7 @@
             <th scope="col">Descripción</th>
             <th scope="col">Precio</th>
             <th scope="col">Stock</th>
+            <th scope="col">Imagen</th>
             <th scope="col">Acciones</th>
           </tr>
         </thead>
@@ -281,6 +291,9 @@
             <br>
             <label for="editarStock">Ingresar Stock</label>
             <input type="number" id="editarStock" required>
+            <br>
+            <label for="editarImagen">Ingresar Imagen</label>
+            <input type="number" id="editarImagen" required>
           </div>
           <div class="modal-footer">
             <button class="btn btn-primary" type="submit" >Enviar</button>
