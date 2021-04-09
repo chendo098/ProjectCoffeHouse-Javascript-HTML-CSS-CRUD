@@ -54,7 +54,7 @@ function mostrarProductos() {
               <td>${producto.descripcion}</td>
               <td>${producto.precio}</td>
               <td>${producto.stock}</td>
-              <td>${producto.imagen}</td>
+              
               <td>
               <button onclick="mostrarDetalle('${producto.id}')" type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalDetalle">Ver Producto</button>
               <button onclick="cargarModalEditar('${producto.id}')" type="button" class="btn btn-success btn-sm" data-bs-toggle="modal"

@@ -30,7 +30,7 @@ function mostrarProductosIndex() {
     const producto = productos[i];
     const tarjetas = `
                 <div class="cardProducto text-center m-auto container row row-cols-1 row-cols-md-3" style="width: 18rem;">
-                    <img src="${producto.imagen}" class="card-img-top" alt="...">
+                    <img src="${producto.imagen}" class="card-img-top" alt="..." style="width: 250px; height: 125px;">
                   <div class="card-body">
                     <h5 class="card-title">${producto.descripcion}</h5>
                     <h7 class="card-title">${producto.tipo}</h7>
