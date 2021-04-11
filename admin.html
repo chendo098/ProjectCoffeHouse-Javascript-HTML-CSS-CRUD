@@ -4,6 +4,23 @@
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="./styles.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+        <!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat&display=swap" rel="stylesheet">
+<link rel = "preconnect" href = "https://fonts.gstatic.com">
+<link href = "https://fonts.googleapis.com/css2? family = Pacifico & display = swap" rel = "hoja de estilo ">
 
     <!-- Bootstrap CSS -->
     <link
@@ -12,7 +29,11 @@
       integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
       crossorigin="anonymous"
     />
-    
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./style.css">
 
     <title>Panel Administración Cafeteria Java Script</title>
@@ -20,73 +41,57 @@
   <body>
     <header>
 <!-- Navbar-->
-<nav class="navbar navbar-expand-lg navbar-light bg-nav" style="background-color: #f0ebe7">
-  <div class="container-fluid justify-content-between">
-    <!-- Left elements -->
-    <div class="d-flex">
-      <!-- Brand -->
-      <a class="navbar-brand me-2 mb-1 d-flex align-items-center" href="/index.html">
-        <img
-        class="logo-nav"
-          src="./images/Logo.png"
-          width="140"
-          height="70"
-          alt=""
-          loading="lazy"
-          style="margin-top: 2px; margin-right: 22px; margin-left: 10px;"
-        />Administración The Coffee House
-      </a>
-
-
-    </div>
-    <!-- Left elements -->
-
-
-
-    <!-- Right elements -->
-    <ul class="navbar-nav flex-row">
-      
-      <li class="nav-item me-3 me-lg-1">
-        <a class="nav-link d-sm-flex align-items-sm-center" href="#"
+<div class="container">
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand me-2 mb-1 d-flex align-items-center" style="color: black;" href="index.html"><img src="./images/Logo.png" class="logo">Administracion The Coffee House</a>
+      <button
+        class="navbar-toggler"
         type="button"
-        class="btn btn-primary"
-        data-bs-toggle="modal"
-        data-bs-target="#exampleModal">
-          <img
-            src="./images/logo mas.png"
-            class="rounded-circle"
-            height="22"
-            alt=""
-            loading="lazy"
-          />
-          <strong class="d-none d-sm-block ms-1">Agregar Producto</strong>
-        </a>
-      </li>
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+<!-- de aca para abajo es la segunda mitad del nav -->
 
-      <li class="nav-item dropdown me-3 me-lg-1">
-        <a
-          class="nav-link dropdown-toggle hidden-arrow"
-          href="#"
-          id="navbarDropdownMenuLink"
-          role="button"
-          data-mdb-toggle="dropdown"
-          aria-expanded="false"
-        >
-          <i class="fas fa-chevron-circle-down fa-lg"></i>
-        </a>
-        <ul
-          class="dropdown-menu dropdown-menu-end"
-          aria-labelledby="navbarDropdownMenuLink"
-        >
-          <li><a class="dropdown-item" href="./index.html">Logout Admin</a></li>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navg navbar-nav w-100 justify-content-lg-end">
+          <li class="nav-item">
+            <a class="nav-link d-sm-flex align-items-sm-center" href="#"         
+            type="button"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"><strong class="d-none d-sm-block ms-1" style="color: black;">Agregar Producto</strong></a>
+          </li>
+          <li class="nav-item dropdown me-3 me-lg-1">
+            <a
+              class="nav-link dropdown-toggle hidden-arrow"
+              href="#"
+              id="navbarDropdownMenuLink"
+              role="button"
+              data-mdb-toggle="dropdown"
+              aria-expanded="false"
+              style="color: black;">
+              <i class="fas fa-chevron-circle-down fa-lg" style="color: black;"></i>
+            </a>
+            <ul
+              class="dropdown-menu dropdown-menu-end"
+              aria-labelledby="navbarDropdownMenuLink"
+            >
+              <li><a class="dropdown-item" href="./index.html" style="color: black;">Logout Admin</a></li>
+    
+              </li>
 
           </li>
         </ul>
-      </li>
-    </ul>
-    <!-- Right elements -->
+      </div>
+    </div>
   </div>
-</nav>
 <!-- Navbar -->
 <br>
 <br>
@@ -99,11 +104,11 @@
 </div>
 <!-- Busqueda -->
 <div class="d-flex justify-content-center mt-5 mb-3">
-  <form id="formBusqueda">
-    <label for="busqueda">Búsqueda por nombre y correo</label>
+  <form id="formBusqueda" style="margin-bottom: auto; margin-top: auto;">
+    <label for="busqueda">Búsqueda por producto</label>
     <input id="busqueda" type="text">
-    <button type="submit" class="btn btn-warning">Buscar</button>
-    <button type="button" class="btn btn-dark" onclick="limpiarFiltro()">Limpiar</button>
+    <button type="submit" class="btn-sm btn-warning">Buscar</button>
+    <button type="button" class="btn-sm btn-dark" onclick="limpiarFiltro()">Limpiar</button>
   </form>
   <div id="alertaBusqueda" class="alert alert-info d-none">No hay resultados para la búsqueda</div>
 </div>
@@ -119,9 +124,6 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Ingrese producto nuevo</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
       </div>
       <div class="modal-body">
         <div class="card m-auto p-3 bg-light" style="max-width: 600px">
@@ -184,7 +186,7 @@
             <div>
               <label for="inputImagen">Ingrese URL Imagen</label>
               <input
-                type="text"
+                type="url"
                 class="form-control"
                 id="inputImagen"
                 placeholder="Ingrese URL Imagen"
@@ -282,12 +284,9 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Datos de usuario</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
+            <h5 class="modal-title" id="exampleModalLabel">Datos de Producto</h5>
           </div>
-          <div id="detalleProducto" class="modal-body">
+          <div id="detalleProducto" class="modal-body row">
             <!-- <p>Titulo</p>
             <p>Nota</p> -->
           </div>
@@ -309,12 +308,9 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Editar Producto</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
         </div>
         <form id="formularioEditar">
-          <div class="modal-body">
+          <div class="modal-body row m-3">
             <label for="editarTipo">Ingresar Tipo de Producto</label>
               <select id="editarTipo" required>
                 <option>Cafe</option>
@@ -352,11 +348,8 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Datos de usuario</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
         </div>
-        <div id="detalleUsuario" class="modal-body">
+        <div id="detalleUsuario" class="modal-body row m-3">
           <!-- <p>Email</p>
           <p>Nombre</p>
           <p>Rol</p>
@@ -375,12 +368,9 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Editar usuario</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
         </div>
         <form id="formularioEditarUsuarios">
-          <div class="modal-body">
+          <div class="modal-body row m-3">
             <label for="editarNombre">Ingresar nombre</label>
             <input type="text" id="editarNombre">
             <br>
@@ -394,7 +384,7 @@
             <br>
             <br>
             <label for="editarEmail">Ingresar Email</label>
-            <input type="text" id="editarEmail">
+            <input type="email" id="editarEmail">
             <br>
             <br>
           </div>
