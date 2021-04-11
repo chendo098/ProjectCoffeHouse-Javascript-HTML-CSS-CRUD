@@ -2,41 +2,37 @@ const formularioForm = document.getElementById("formulario");
 const correoInput = document.getElementById("inputEmail");
 const passwordInput = document.getElementById("inputPass");
 const alertaDiv = document.getElementById("alerta");
-const admin = { correo: "admin@cafe.com", pass: "admin" };
+const admin = { email: "admin@cafe.com", pass: "admin" };
 const json = localStorage.getItem("productos");
 let productos = JSON.parse(json) || [];
-const json3 = localStorage.getItem('usuarios'); // Traer de localStorage el dato asociado a la key "usuarios".
-let usuarios3 = JSON.parse(json3) || [];
+const json3 = localStorage.getItem("usuarios"); // Traer de localStorage el dato asociado a la key "usuarios".
+const usuarios3 = JSON.parse(json3) || [];
 
 formularioForm.onsubmit = function (event) {
+  console.log("🚀 - formularioForm", formularioForm);
   event.preventDefault();
-  const coincideEmail = admin.correo === correoInput.value;
-  const coincidePass = admin.pass === passwordInput.value; 
-  const usuariosLocal = JSON.parse(localStorage.getItem("usuarios")) || [];
-  
-  const usuariosFiltrados = usuariosLocal.filter((usuario) => {
-    const usuarioCorreo = usuario.correo;
-    console.log("formularioForm.onsubmit -> usuarioCorreo", usuarioCorreo)
-    const usuarioPass = usuario.pass; 
-  
-  
-  const coincideUsuarioEmail = usuarioCorreo === correoInput.value;
-  const coincideUsuarioPass = usuarioPass === passwordInput.value;
-  
+  const coincideEmail = admin.email === correoInput.value;
+  const coincidePass = admin.pass === passwordInput.value;
   if (coincideEmail && coincidePass) {
     alert("Bienvenido Administrador");
     window.location.href = "./admin.html";
-  } else if (coincideUsuarioEmail && coincideUsuarioPass){
-      alert("Bienvenido Usuario");
-      window.location.href = "./index.html";
-    } else{
-      alert("USUARIO NO REGISTRADO");
-    
-
-    }
+    return;
+  }
+  const usuariosLocal = JSON.parse(localStorage.getItem("usuarios")) || [];
+  const usuarioEncontrado = usuariosLocal.find((usuario) => {
+    const usuarioCorreo = usuario.correo;
+    const usuarioPass = usuario.pass;
+    const coincideUsuarioEmail = usuarioCorreo === correoInput.value;
+    const coincideUsuarioPass = usuarioPass === passwordInput.value;
+    return coincideUsuarioEmail && coincideUsuarioPass;
   });
-  };
-
+  if (usuarioEncontrado) {
+    alert("Bienvenido Usuario");
+    window.location.href = "./index.html";
+    return;
+  }
+  alert("USUARIO NO REGISTRADO");
+};
 
 /* Mostrar tarjetas de Productos */
 
