@@ -144,3 +144,9 @@
 .top-nav-collapse {
   background-color: rgb(39, 39, 39);
 }
+
+.fondo-contacto {
+  background-image: url(./images/fondocontacto.jpg);
+  padding-top: 80px;
+  padding-bottom: 40px;
+}
