@@ -9,7 +9,6 @@
 }
 
 .navg:hover {
-  background-color: whitesmoke;
   width: 33%;
 }
 
@@ -114,7 +113,6 @@
 
 .cardProducto {
   text-align: center;
-  
 }
 
 .container {
@@ -122,5 +120,27 @@
   flex-wrap: nowrap;
   align-items: center;
   justify-content: space-around;
-  
+}
+
+.navg a {
+  color: rgb(243, 239, 234) !important;
+  font-family: "Montserrat";
+  font-size: 23px;
+  padding: 10px 15px;
+  text-align: center;
+}
+
+.navg a:hover {
+  background-color: #f8b333a2;
+}
+
+.logo {
+  height: 52px;
+  margin-left: 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.top-nav-collapse {
+  background-color: rgb(39, 39, 39);
 }
