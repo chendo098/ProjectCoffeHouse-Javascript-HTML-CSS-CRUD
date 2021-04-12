@@ -1,8 +1,8 @@
 const formularioUsuario = document.getElementById("formularioLogin");
-const emailInput = document.getElementById("inputCorreo");
-const passInput = document.getElementById("inputPassword");
-const nombreInput = document.getElementById("inputName");
-const apellidoInput = document.getElementById("inputLastname");
+const emailInput = document.getElementById("inputEmail");
+const passInput = document.getElementById("inputPass");
+const nombreInput = document.getElementById("inputNombre");
+const apellidoInput = document.getElementById("inputApellido");
 const sexoInput = document.getElementById("inputSexo");
 const nacimientoInput = document.getElementById("inputNacimiento");
 const json2 = localStorage.getItem("usuarios"); // Traer de localStorage el dato asociado a la key "usuarios".
