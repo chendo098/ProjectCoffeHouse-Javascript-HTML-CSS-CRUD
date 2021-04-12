@@ -71,6 +71,10 @@ function mostrarProductos() {
 mostrarProductos();
 
 function eliminarProducto(id) {
+  const confirmar = confirm("Confirme para eliminar producto");
+  if (!confirmar) {
+    return;
+  }
   let productosFiltrados = [];
   for (let i = 0; i < productos.length; i++) {
     const producto = productos[i];
