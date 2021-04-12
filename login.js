@@ -28,6 +28,8 @@ function submitFormulario(e) {
   const json2 = JSON.stringify(usuarios);
   localStorage.setItem("usuarios", json2);
 
+      alert("Se registro exitosamente el usuario");
+      window.location.href = "./index.html";
   console.log("Se registró exitosamente un usuario. 👨‍💻");
   formularioUsuario.reset();
 }
