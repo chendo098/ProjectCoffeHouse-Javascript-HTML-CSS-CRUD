@@ -48,7 +48,7 @@
   object-fit: cover;
 }
 
-.style-card:hover {
+.cardProducto:hover {
   transform: translateY(-15px);
 }
 
